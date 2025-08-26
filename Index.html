@@ -14,7 +14,7 @@
 
     <script>
         async function fetchSignal() {
-            const res = await fetch('https://<SEU_LINK_RAILWAY>/signal'); // Substitua pelo link público Railway
+            const res = await fetch('https://rob-day-trade.onrender.com'); // Substitua pelo link público Railway
             const data = await res.json();
             const signalDiv = document.getElementById('signal');
             signalDiv.className = data.signal === 'CALL' ? 'call' : (data.signal === 'PUT' ? 'put' : '');
