@@ -1,26 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sinais EUR/USD</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        .call { color: green; font-size: 50px; }
-        .put { color: red; font-size: 50px; }
-    </style>
+    <title>Robô Day Trade</title>
 </head>
 <body>
-    <h1>Último sinal</h1>
-    <div id="signal">Aguardando...</div>
-
-    <script>
-        async function fetchSignal() {
-            const res = await fetch('https://rob-day-trade.onrender.com'); // Substitua pelo link público Railway
-            const data = await res.json();
-            const signalDiv = document.getElementById('signal');
-            signalDiv.className = data.signal === 'CALL' ? 'call' : (data.signal === 'PUT' ? 'put' : '');
-            signalDiv.innerText = data.signal;
-        }
-        setInterval(fetchSignal, 1000);
-    </script>
+    <h1>Robô de Day Trade rodando no Render 🚀</h1>
+    <p>Aqui aparecerão os sinais do robô.</p>
 </body>
 </html>
