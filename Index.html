@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sinais EUR/USD</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .call { color: green; font-size: 50px; }
+        .put { color: red; font-size: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Último sinal</h1>
+    <div id="signal">Aguardando...</div>
+
+    <script>
+        async function fetchSignal() {
+            const res = await fetch('https://<SEU_LINK_RAILWAY>/signal'); // Substitua pelo link público Railway
+            const data = await res.json();
+            const signalDiv = document.getElementById('signal');
+            signalDiv.className = data.signal === 'CALL' ? 'call' : (data.signal === 'PUT' ? 'put' : '');
+            signalDiv.innerText = data.signal;
+        }
+        setInterval(fetchSignal, 1000);
+    </script>
+</body>
+</html>
